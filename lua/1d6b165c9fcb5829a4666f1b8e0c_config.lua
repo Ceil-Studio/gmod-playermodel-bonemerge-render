@@ -2,9 +2,9 @@ CEIL_PM = CEIL_PM or {}
 
 CEIL_PM.ID = "1d6b165c9fcb5829a4666f1b8e0c"
 
-CEIL_PM.Type = ""
+CEIL_PM.Type = "" -- apres chemin si male/female
 
-CEIL_PM["BaseAcces"] = "models/ceil_pm/kb"
+CEIL_PM["BaseAcces"] = "models/ceil_pm/kb" ---chemin base
 
 CEIL_PM["pm"] = CEIL_PM["BaseAcces"]..CEIL_PM.Type.."/head.mdl"
 
