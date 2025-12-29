@@ -34,17 +34,19 @@ end
 local function CreateHair(ply)
 
     if IsValid(ply.Hair) then
-        if ply.Hair:GetModel()~="models/mha_mika/ceil_pm/"..CEIL_PM.Type.."/hair/" .. CEIL_PM.hair .. ".mdl" then
+        if ply.Hair:GetModel()~=CEIL_PM["BaseAcces"]..CEIL_PM.Type.."/hair/" .. CEIL_PM.hair .. ".mdl" then
             ply.Hair:Remove()
         end
     end
+
+    if CEIL_PM.hair == nil then return end
 
     if IsValid(ply.Hair) then return end
 
 
 
     local hair = ClientsideModel(
-        "models/mha_mika/ceil_pm/"..CEIL_PM.Type.."/hair/" .. CEIL_PM.hair .. ".mdl",
+        CEIL_PM["BaseAcces"]..CEIL_PM.Type.."/hair/" .. CEIL_PM.hair .. ".mdl",
         RENDERGROUP_OPAQUE
     )
 
@@ -58,14 +60,16 @@ end
 local function CreateBody(ply)
 
     if IsValid(ply.Body) then
-        if ply.Body:GetModel()~="models/mha_mika/ceil_pm/"..CEIL_PM.Type.."/tenue/" .. CEIL_PM.corp .. ".mdl" then
+        if ply.Body:GetModel()~=CEIL_PM["BaseAcces"]..CEIL_PM.Type.."/tenue/" .. CEIL_PM.corp .. ".mdl" then
             ply.Body:Remove()
         end
     end
+
+    if CEIL_PM.corp == nil then return end
     if IsValid(ply.Body) then return end
 
     local body = ClientsideModel(
-        "models/mha_mika/ceil_pm/"..CEIL_PM.Type.."/tenue/" .. CEIL_PM.corp .. ".mdl",
+        CEIL_PM["BaseAcces"]..CEIL_PM.Type.."/tenue/" .. CEIL_PM.corp .. ".mdl",
         RENDERGROUP_OPAQUE
     )
 

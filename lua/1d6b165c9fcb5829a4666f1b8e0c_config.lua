@@ -2,11 +2,13 @@ CEIL_PM = CEIL_PM or {}
 
 CEIL_PM.ID = "1d6b165c9fcb5829a4666f1b8e0c"
 
-CEIL_PM.Type = "female"
+CEIL_PM.Type = ""
 
-CEIL_PM["pm"] = "models/mha_mika/ceil_pm/"..CEIL_PM.Type.."/head.mdl"
+CEIL_PM["BaseAcces"] = "models/ceil_pm/kb"
 
-CEIL_PM["hair"] = 3
+CEIL_PM["pm"] = CEIL_PM["BaseAcces"]..CEIL_PM.Type.."/head.mdl"
+
+CEIL_PM["hair"] = nil
 
 CEIL_PM["corp"] = 1
 
