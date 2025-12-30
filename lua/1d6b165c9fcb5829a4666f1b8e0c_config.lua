@@ -12,7 +12,16 @@ CEIL_PM["hair"] = nil
 
 CEIL_PM["corp"] = 1
 
+CEIL_PM["table_body_color"] = {
+    Vector(0.96*255, 0.80*255, 0.69*255),
+    Vector(0.91*255, 0.74*255, 0.60*255),
+    Vector(0.76*255, 0.58*255, 0.45*255),
+    Vector(0.60*255, 0.43*255, 0.32*255),
+    Vector(0.45*255, 0.30*255, 0.22*255),
+    Vector(0.30*255, 0.20*255, 0.14*255),
+}
 
-CEIL_PM.BodyColor = Vector(255, 240, 150)
+
+CEIL_PM.BodyColor = CEIL_PM["table_body_color"][1]
 
 CEIL_PM.HairColor = {Vector(255,0,0), Vector(123,145,25)}
