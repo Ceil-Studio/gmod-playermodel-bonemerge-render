@@ -2,13 +2,13 @@ CEIL_PM = CEIL_PM or {}
 
 CEIL_PM.ID = "1d6b165c9fcb5829a4666f1b8e0c"
 
-CEIL_PM.Type = "" -- apres chemin si male/female
+CEIL_PM.Type = "/male" -- apres chemin si male/female
 
-CEIL_PM["BaseAcces"] = "models/ceil_pm/kb" ---chemin base
+CEIL_PM["BaseAcces"] = "models/mha_mika/ceil_pm" ---chemin base
 
 CEIL_PM["pm"] = CEIL_PM["BaseAcces"]..CEIL_PM.Type.."/head.mdl"
 
-CEIL_PM["hair"] = nil
+CEIL_PM["hair"] = 1
 
 CEIL_PM["corp"] = 1
 
@@ -23,5 +23,6 @@ CEIL_PM["table_body_color"] = {
 
 
 CEIL_PM.BodyColor = CEIL_PM["table_body_color"][1]
+CEIL_PM.BodyPilosityColor = Vector(255,0,255)
 
-CEIL_PM.HairColor = {Vector(255,0,0), Vector(123,145,25)}
+CEIL_PM.HairColor = {Vector(255,0,0), Vector(255,145,25)}

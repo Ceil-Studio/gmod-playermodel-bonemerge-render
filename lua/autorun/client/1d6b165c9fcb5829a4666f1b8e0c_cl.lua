@@ -6,7 +6,13 @@ local function ApplyColors(ply)
     local col = CEIL_PM.BodyColor
     local vec = Vector(col[1]/255, col[2]/255, col[3]/255)
 
+    local colpilo = CEIL_PM.BodyPilosityColor
+    local vecpilo = Vector(colpilo[1]/255, colpilo[2]/255, colpilo[3]/255)
+
     ply:SetPlayerColor(vec)
+    ply.GetPlayerHairColor = function()
+        return vecpilo
+    end
 
     if IsValid(ply.Body) then
         ply.Body.GetPlayerColor = function()
