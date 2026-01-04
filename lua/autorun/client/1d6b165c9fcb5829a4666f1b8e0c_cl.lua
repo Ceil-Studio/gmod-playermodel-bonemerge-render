@@ -39,20 +39,22 @@ end
 
 local function CreateHair(ply)
 
+
+    if CEIL_PM.hair == nil then return end
+
     if IsValid(ply.Hair) then
-        if ply.Hair:GetModel()~=CEIL_PM["BaseAcces"]..CEIL_PM.Type.."/hair/" .. CEIL_PM.hair .. ".mdl" then
+        if ply.Hair:GetModel()~=CEIL_PM.hair then
             ply.Hair:Remove()
         end
     end
 
-    if CEIL_PM.hair == nil then return end
 
     if IsValid(ply.Hair) then return end
 
 
 
     local hair = ClientsideModel(
-        CEIL_PM["BaseAcces"]..CEIL_PM.Type.."/hair/" .. CEIL_PM.hair .. ".mdl",
+        CEIL_PM.hair,
         RENDERGROUP_OPAQUE
     )
 
@@ -65,17 +67,20 @@ end
 
 local function CreateBody(ply)
 
+
+    if CEIL_PM.corp == nil then return end
+
     if IsValid(ply.Body) then
-        if ply.Body:GetModel()~=CEIL_PM["BaseAcces"]..CEIL_PM.Type.."/tenue/" .. CEIL_PM.corp .. ".mdl" then
+        if ply.Body:GetModel()~=CEIL_PM.corp then
             ply.Body:Remove()
         end
     end
 
-    if CEIL_PM.corp == nil then return end
+
     if IsValid(ply.Body) then return end
 
     local body = ClientsideModel(
-        CEIL_PM["BaseAcces"]..CEIL_PM.Type.."/tenue/" .. CEIL_PM.corp .. ".mdl",
+        CEIL_PM.corp,
         RENDERGROUP_OPAQUE
     )
 
@@ -89,6 +94,7 @@ end
 hook.Add("Think", CEIL_PM.ID, function()
     for _, ply in ipairs(player.GetAll()) do
         if not IsValid(ply) then continue end
+        if !CEIL_PM.ON then return end
 
         CreateHair(ply)
         CreateBody(ply)
@@ -101,3 +107,4 @@ end)
 hook.Add("PostPlayerDraw", CEIL_PM.ID, function(ply)
     ply:SetPlayerColor(Vector(CEIL_PM.BodyColor[1]/255, CEIL_PM.BodyColor[2]/255, CEIL_PM.BodyColor[3]/255))
 end)
+
